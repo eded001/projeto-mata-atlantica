@@ -3,6 +3,8 @@
 * {
     padding: 0px;
     margin: 0px;
+
+    box-sizing: border-box;
 }
 
 :root {
@@ -25,13 +27,19 @@ body {
     background-color: var(--cor06);
 
     font-family: var(--fonte-padrao);
+
+    height: 100vh;
 }
 
 header {
     background: black url(../imagens/mata-atlantica.jpg) center center no-repeat scroll;
     background-size: cover;
 
-    padding: 15% 0%;
+    height: 100vh;
+
+    display: grid;
+
+    place-content: center;
 
     box-shadow: inset 0px 0px 10px 2px black;
 }
@@ -46,8 +54,6 @@ header > h1 {
     font-size: 9vw;
 
     text-shadow: 0px 0px 3px white;
-
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 header > h4 {
@@ -58,8 +64,6 @@ header > h4 {
     font-family: var(--fonte-titulo);
     font-variant: small-caps;
     font-size: 2vw;
-
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 header a {
@@ -88,15 +92,19 @@ main h1 {
     font-size: 3em;
 
     text-shadow: 0px 0px 3px white;
-
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
-#fauna {
-    background: black url(../imagens/mico-leao-dourado-cortado.jpg) center center no-repeat scroll;
-    background-size: cover;
+.centro{
+    height: 70vh;
 
-    padding: 8% 0%;
+    display: grid;
+
+    place-content: center;
+}
+
+.fauna {
+    background: black url(../imagens/mico-leao-dourado.jpg) 79% center no-repeat scroll;
+    background-size: cover;
 
     border-radius: 2px;
 
@@ -105,11 +113,9 @@ main h1 {
     margin: -6px -10px;
 }
 
-#flora {
-    background: black url(../imagens/ipe.jpg) top center no-repeat scroll;
+.flora {
+    background: black url(../imagens/ipe.jpg) center center no-repeat scroll;
     background-size: cover;
-
-    padding: 8% 0%;
 
     border-radius: 2px;
 
@@ -118,11 +124,9 @@ main h1 {
     margin: -6px -10px;
 }
 
-#extensao-territorial {
-    background: black url(../imagens/mapa.jpeg) bottom center no-repeat scroll;
+.extensao-territorial {
+    background: black url(../imagens/mapa.jpeg) center center no-repeat scroll;
     background-size: cover;
-
-    padding: 8% 0%;
 
     border-radius: 2px;
 
@@ -131,11 +135,9 @@ main h1 {
     margin: -6px -10px;
 }
 
-#impactos-ambientais {
-    background: black url(../imagens/mata-atlantica-queimada.jpg) top center no-repeat scroll;
+.impactos-ambientais {
+    background: black url(../imagens/mata-atlantica-queimada.jpg) center center no-repeat scroll;
     background-size: cover;
-
-    padding: 8% 0%;
 
     border-radius: 2px;
 
@@ -144,12 +146,10 @@ main h1 {
     margin: -6px -10px;
 }
 
-#projetos-sustentaveis {
+.projetos-sustentaveis {
     background: black url(../imagens/mata-atlantica-sus.jpg) center center no-repeat scroll;
     background-size: cover;
 
-    padding: 8% 0%;
-
     border-radius: 2px;
 
     box-shadow: inset 0px 0px 10px 2px black;
@@ -157,11 +157,9 @@ main h1 {
     margin: -6px -10px;
 }
 
-#importancia-do-bioma {
+.importancia-do-bioma {
     background: black url(../imagens/mata-atlantica-seilacaralho.jpg) bottom center no-repeat scroll;
     background-size: cover;
-
-    padding: 8% 0%;
 
     border-radius: 2px;
 
@@ -183,8 +181,6 @@ main h1 {
 }
 
 main > article {
-    margin: 0% 4%;
-
     background-color: var(--cor05);
 
     padding: 5px 10px;
@@ -217,9 +213,22 @@ main p {
 }
 
 main ul {
-    padding-left: 20px;
+    padding: 0 20px;
 
     font-family: var(--fonte-padrao);
+
+    display: flex;
+
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 5px;
+
+    list-style: none;
+
+    /* border: 1px solid red; */
 }
 
 main li {
@@ -228,6 +237,14 @@ main li {
     margin: 0px 4px;
 
     color: var(--cor01);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
 }
 
 img {
@@ -241,8 +258,6 @@ img {
 }
 
 li > img {
-    display: block;
-
     border-radius: 2px;
 
     box-shadow: 0px 0px 2px black;
@@ -317,6 +332,7 @@ main a {
 main a:hover {
     text-decoration: underline;
 }
+main a::after {content: '🔗';}
 
 aside {
     background-color: var(--cor05);
@@ -365,9 +381,8 @@ aside a {
     padding: 3px;
 }
 
-aside a:hover {
-    text-decoration: underline;
-}
+aside a:hover {text-decoration: underline;}
+aside a::after {content: '🔗';}
 
 footer {
     background-color: var(--cor04);
@@ -398,6 +413,5 @@ footer a {
     color: var(--cor09);
 }
 
-footer a:hover {
-    text-decoration: underline;
-}
+footer a:hover {text-decoration: underline;}
+footer a::after {content: '🔗';}
